@@ -1,0 +1,50 @@
+name: Translation Request
+description: Request a new language or report a translation error
+title: "[Translation] "
+labels: ["translation"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Request type
+      options:
+        - Add a new language
+        - Fix an existing translation
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      placeholder: e.g. French, German, Japanese
+    validations:
+      required: true
+
+  - type: input
+    id: code
+    attributes:
+      label: Language code (ISO 639-1)
+      placeholder: e.g. fr, de, ja
+      description: Leave blank if you are not sure.
+    validations:
+      required: false
+
+  - type: textarea
+    id: fix_details
+    attributes:
+      label: Translation Fix Details
+      description: If you are reporting a translation error, please provide the incorrect text and your suggestion.
+      placeholder: |
+        Current text: "ÇEKİRDEK BAŞLATILIYOR"
+        Suggested fix: "CORE IS INITIALIZING"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      placeholder: Tell us why this language should be added, or provide extra context for your fix.
+    validations:
+      required: false
